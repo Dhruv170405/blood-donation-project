@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donation Awareness Hub | Save Lives</title>
+  <meta name="description" content="A public health web application to educate communities on blood donation, ABO/Rh compatibility, clinical safety, and voluntary donor registration.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dc2626'><path d='M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z'/></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Emergency Notice Bar -->
+  <aside class="top-notice-bar" aria-label="Urgent Blood Needs Notice">
+    <div class="container top-notice-inner">
+      <div class="notice-text">
+        <span class="pulse-dot"></span>
+        <strong>Urgent Blood Need:</strong> Critical shortages for <strong>O-Negative</strong> and <strong>B-Negative</strong> units in regional hospitals.
+      </div>
+      <div class="notice-contact">
+        <span>24/7 Helpline:</span>
+        <a href="tel:18007335433" class="helpline-link">1-800-RED-LIFE</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Main Header & Navigation -->
+  <header class="site-header" id="header">
+    <div class="container nav-wrapper">
+      <a href="#about" class="brand-logo" aria-label="Blood Donation Awareness Home">
+        <span class="logo-icon">🩸</span>
+        <div class="logo-text">
+          <span class="logo-title">BloodLife Hub</span>
+          <span class="logo-sub">Public Health Initiative</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <a href="#about" class="nav-link active">About</a>
+        <a href="#impact" class="nav-link">Why Donate</a>
+        <a href="#compatibility" class="nav-link">Compatibility</a>
+        <a href="#eligibility" class="nav-link">Eligibility</a>
+        <a href="#myths" class="nav-link">Myths & Facts</a>
+        <a href="#quiz" class="nav-link">Quiz</a>
+        <a href="#register" class="btn btn-sm btn-primary">Register as Donor</a>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content">
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="about">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="pill-tag">
+            <span class="tag-dot"></span> Voluntary Blood Donation Awareness
+          </div>
+          <h1 class="hero-title">
+            Give Blood. <span class="text-accent">Save Lives.</span><br>
+            Make a Difference.
+          </h1>
+          <p class="hero-paragraph">
+            Human blood cannot be manufactured synthetically in a lab. It only comes as a voluntary gift from healthy donors. Every single donation can save up to <strong>three patients</strong> recovering from traumatic injuries, complex surgeries, and cancer therapies.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#register" class="btn btn-primary">Register as Donor ✍️</a>
+            <a href="#compatibility" class="btn btn-secondary">Compatibility Explorer 🩸</a>
+            <a href="#quiz" class="btn btn-outline">Take Quick Quiz 📝</a>
+          </div>
+
+          <!-- Key Metrics Strip -->
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-number">1 Unit</span>
+              <span class="stat-label">Saves up to 3 Lives</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">10 Mins</span>
+              <span class="stat-label">Actual Collection Time</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">56 Days</span>
+              <span class="stat-label">Safe Donation Cycle</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-card">
+            <img src="assets/images/hero.jpg" alt="Volunteers safely donating blood in a clean healthcare clinic" width="580" height="380" loading="eager">
+            <div class="visual-badge">
+              <span class="badge-icon">🛡️</span>
+              <div>
+                <strong>100% Sterile & Single-Use Equipment</strong>
+                <p>Completely safe process with zero risk of infection</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Clinical Impact (Why Blood is Essential) -->
+    <section class="section bg-light" id="impact">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="section-tag">Clinical Reality</span>
+          <h2>Why Blood is Essential</h2>
+          <p>Where does your donated blood go? Hospitals rely on scheduled donations every day for these life-saving procedures.</p>
+        </div>
+
+        <div class="impact-grid" id="impactGrid">
+          <!-- Populated dynamically via JS or rendered below -->
+          <article class="impact-card">
+            <div class="impact-icon-wrap">🚗</div>
+            <h3>Emergency Trauma</h3>
+            <p>Accident and trauma victims suffering acute hemorrhage often need 30 to 50 blood units within minutes to prevent shock.</p>
+            <span class="demand-badge">Need: Up to 50 Units</span>
+          </article>
+
+          <article class="impact-card">
+            <div class="impact-icon-wrap">🏥</div>
+            <h3>Major Surgeries</h3>
+            <p>Open-heart operations, joint replacements, and organ transplants require multiple units of packed red blood cells on hand.</p>
+            <span class="demand-badge">Need: 2 to 10+ Units</span>
+          </article>
+
+          <article class="impact-card">
+            <div class="impact-icon-wrap">🩺</div>
+            <h3>Cancer Support</h3>
+            <p>Chemotherapy destroys both cancer cells and healthy bone marrow. Regular platelet transfusions keep cancer patients stable.</p>
+            <span class="demand-badge">Need: Weekly Transfusions</span>
+          </article>
+
+          <article class="impact-card">
+            <div class="impact-icon-wrap">👶</div>
+            <h3>Maternal & Neonatal</h3>
+            <p>Postpartum hemorrhage in new mothers and premature babies in NICU units rely on specialized, screened micro-donations.</p>
+            <span class="demand-badge">Need: Immediate Access</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Interactive ABO/Rh Compatibility Explorer -->
+    <section class="section" id="compatibility">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="section-tag">Transfusion Science</span>
+          <h2>Blood Compatibility Explorer</h2>
+          <p>Click on any blood group below to see who you can donate red blood cells to and who you can safely receive blood from.</p>
+        </div>
+
+        <!-- Blood Type Selector Buttons -->
+        <div class="blood-selector" id="bloodSelector">
+          <button class="type-btn active" data-type="O-">O-</button>
+          <button class="type-btn" data-type="O+">O+</button>
+          <button class="type-btn" data-type="A-">A-</button>
+          <button class="type-btn" data-type="A+">A+</button>
+          <button class="type-btn" data-type="B-">B-</button>
+          <button class="type-btn" data-type="B+">B+</button>
+          <button class="type-btn" data-type="AB-">AB-</button>
+          <button class="type-btn" data-type="AB+">AB+</button>
+        </div>
+
+        <!-- Dynamic Compatibility Result Display -->
+        <div class="compat-display-card">
+          <div class="compat-header">
+            <div>
+              <h3 id="compatTitle">O Negative (O-)</h3>
+              <p id="compatNote" class="text-muted">Universal Red Blood Cell Donor</p>
+            </div>
+            <span class="role-pill" id="compatBadge">Universal RBC Donor</span>
+          </div>
+
+          <div class="compat-columns">
+            <div class="compat-box give-box">
+              <h4><span>⬆️</span> Can Safely Donate Red Cells To:</h4>
+              <div class="type-tags" id="giveTags"></div>
+            </div>
+            <div class="compat-box receive-box">
+              <h4><span>⬇️</span> Can Safely Receive Red Cells From:</h4>
+              <div class="type-tags" id="receiveTags"></div>
+            </div>
+          </div>
+
+          <div class="compat-footer-note">
+            <small>⚠️ <strong>Educational Note:</strong> Clinical blood transfusions always require laboratory ABO/Rh crossmatching by certified medical specialists.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Eligibility & 4-Step Donation Process -->
+    <section class="section bg-light" id="eligibility">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="section-tag">Safety First</span>
+          <h2>Eligibility & What to Expect</h2>
+          <p>Donating blood is simple, quick, and safe. Here are the basic qualifications and the standard 4-step process.</p>
+        </div>
+
+        <!-- 4-Step Process Walkthrough -->
+        <div class="process-steps">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <h4>Registration & ID</h4>
+            <p>Present a photo ID and complete a confidential health history questionnaire.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <h4>Mini-Screening</h4>
+            <p>Staff check temperature, pulse, blood pressure, and a quick fingerstick hemoglobin test.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <h4>10-Min Donation</h4>
+            <p>Relax comfortably while approximately 1 pint of blood is collected into a sterile bag.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">4</div>
+            <h4>Rest & Refresh</h4>
+            <p>Enjoy free juices and snacks for 15 minutes before heading back to your routine.</p>
+          </div>
+        </div>
+
+        <!-- Eligibility Checklist Grid -->
+        <div class="eligibility-split">
+          <div class="criteria-card">
+            <h3>Standard Donor Criteria</h3>
+            <ul class="criteria-list">
+              <li><strong>Age:</strong> 18 – 65 years (16–17 with parental consent in some regions).</li>
+              <li><strong>Weight:</strong> At least 50 kg (110 lbs) for a standard whole blood donation.</li>
+              <li><strong>Hemoglobin:</strong> Minimum 12.5 g/dL (tested free of cost at the drive).</li>
+              <li><strong>Time Interval:</strong> At least 56 days (8 weeks) between whole blood donations.</li>
+              <li><strong>Wellness:</strong> Feeling healthy, well-hydrated, with no cold, flu, or fever.</li>
+            </ul>
+          </div>
+
+          <div class="checklist-card">
+            <h3>Quick Self-Eligibility Check</h3>
+            <p class="text-muted">Confirm these 4 points to see if you are ready to donate today:</p>
+            <div class="checklist-items">
+              <label class="check-row">
+                <input type="checkbox" class="eligibility-check" checked>
+                <span>I am between 18 and 65 years of age.</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" class="eligibility-check" checked>
+                <span>I weigh at least 50 kg (110 lbs).</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" class="eligibility-check" checked>
+                <span>It has been at least 56 days since my last donation.</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" class="eligibility-check">
+                <span>I have had a good meal and feel energetic today.</span>
+              </label>
+            </div>
+            <div class="checklist-verdict" id="checklistVerdict">
+              3 of 4 requirements checked. Complete all 4 to confirm readiness!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Myths vs. Facts Section -->
+    <section class="section" id="myths">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="section-tag">Science & Truth</span>
+          <h2>Myths vs. Facts</h2>
+          <p>Common fears and misconceptions often stop eligible people from donating. Let's look at what medical science says.</p>
+        </div>
+
+        <div class="myths-grid" id="mythsGrid">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Interactive 4-Question Knowledge Quiz -->
+    <section class="section bg-light" id="quiz">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="section-tag">Test Your Knowledge</span>
+          <h2>Blood Donation Awareness Quiz</h2>
+          <p>Answer 4 quick multiple-choice questions to test your knowledge about transfusion medicine and donor health.</p>
+        </div>
+
+        <div class="quiz-container" id="quizContainer">
+          <!-- Quiz Active View -->
+          <div class="quiz-card" id="quizActiveCard">
+            <div class="quiz-header">
+              <span class="quiz-counter" id="quizCounter">Question 1 of 4</span>
+              <span class="quiz-score-badge" id="quizLiveScore">Score: 0</span>
+            </div>
+
+            <div class="quiz-progress-bar">
+              <div class="quiz-progress-fill" id="quizProgressFill" style="width: 25%;"></div>
+            </div>
+
+            <h3 class="quiz-question-text" id="quizQuestionText">Loading Question...</h3>
+
+            <div class="quiz-options-list" id="quizOptionsList">
+              <!-- Rendered via JS -->
+            </div>
+
+            <div class="quiz-feedback-box" id="quizFeedbackBox" style="display: none;">
+              <p id="quizFeedbackText"></p>
+              <button class="btn btn-sm btn-primary" id="quizNextBtn">Next Question ➡️</button>
+            </div>
+          </div>
+
+          <!-- Quiz Result View (Hidden Initially) -->
+          <div class="quiz-card quiz-result-card" id="quizResultCard" style="display: none;">
+            <div class="result-icon">🏆</div>
+            <h3>Quiz Completed!</h3>
+            <p class="result-score" id="resultScoreText">You scored 4 out of 4 (100%)</p>
+            <p class="result-message" id="resultMessageText">Excellent work! You have strong awareness of blood donation science.</p>
+            <div class="result-actions">
+              <button class="btn btn-primary" id="quizRestartBtn">Retake Quiz ↺</button>
+              <a href="#register" class="btn btn-secondary">Register as Donor ✍️</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Voluntary Donor Registration & Searchable Directory -->
+    <section class="section" id="register">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="section-tag">Community Action</span>
+          <h2>Voluntary Donor Directory</h2>
+          <p>Register as a prospective donor in our local simulated directory, or search available donors by name, blood group, or city.</p>
+        </div>
+
+        <div class="registry-wrapper">
+          <!-- Left: Registration Form -->
+          <div class="card form-card">
+            <h3>Register as a Voluntary Donor</h3>
+            <p class="text-muted">Your contact number will be masked for privacy in the public directory.</p>
+
+            <form id="donorForm" novalidate>
+              <div class="form-group">
+                <label for="donorName">Full Name *</label>
+                <input type="text" id="donorName" placeholder="e.g. Priya Sharma" required>
+                <small class="error-msg" id="nameError"></small>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="donorBlood">Blood Group *</label>
+                  <select id="donorBlood" required>
+                    <option value="">Select...</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                  </select>
+                  <small class="error-msg" id="bloodError"></small>
+                </div>
+
+                <div class="form-group">
+                  <label for="donorCity">City / Campus *</label>
+                  <input type="text" id="donorCity" placeholder="e.g. North Campus" required>
+                  <small class="error-msg" id="cityError"></small>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="donorPhone">Contact Phone (10 digits) *</label>
+                <input type="tel" id="donorPhone" placeholder="e.g. 9876543210" required>
+                <small class="error-msg" id="phoneError"></small>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">Add to Donor Directory</button>
+              <div class="form-feedback" id="formFeedback"></div>
+            </form>
+          </div>
+
+          <!-- Right: Directory Table & Search -->
+          <div class="card directory-card">
+            <div class="directory-top-bar">
+              <div>
+                <h3>Registered Donors</h3>
+                <span class="donor-count-badge" id="donorCount">5 Donors</span>
+              </div>
+              <div class="directory-actions">
+                <input type="text" id="donorSearchInput" class="search-input" placeholder="Search by name, group, city...">
+                <button type="button" class="btn btn-sm btn-outline" id="resetDonorsBtn" title="Reset to initial sample donors">Reset Demo Data</button>
+              </div>
+            </div>
+
+            <div class="table-container">
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>Donor Name</th>
+                    <th>Blood Group</th>
+                    <th>City / Campus</th>
+                    <th>Contact</th>
+                  </tr>
+                </thead>
+                <tbody id="donorTableBody">
+                  <!-- Populated by JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Clean Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="brand-logo footer-logo">
+          <span class="logo-icon">🩸</span>
+          <span class="logo-title" style="color: #fff;">BloodLife Hub</span>
+        </div>
+        <p class="footer-desc">
+          An interactive public health project to raise voluntary blood donation awareness, dispel myths, and connect communities.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#about">About Initiative</a></li>
+          <li><a href="#impact">Clinical Impact</a></li>
+          <li><a href="#compatibility">Compatibility Matrix</a></li>
+          <li><a href="#eligibility">Donor Eligibility</a></li>
+          <li><a href="#quiz">Knowledge Quiz</a></li>
+          <li><a href="#register">Donor Directory</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Emergency Hotline</h4>
+        <p class="footer-helpline-box">
+          <span>National Blood Helpline:</span>
+          <a href="tel:18007335433" class="phone-highlight">1-800-RED-LIFE</a>
+        </p>
+        <p class="footer-note">Free 24/7 emergency assistance for hospital blood bank inventory checks.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 Blood Donation Awareness & Public Health Hub. Built for educational demonstration.</p>
+        <p>Medical Notice: Real clinical transfusions require laboratory typing and crossmatching.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript Module -->
+  <script type="module" src="scripts/app.js"></script>
+</body>
+</html>

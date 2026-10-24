@@ -1,0 +1,12 @@
+{
+  "name": "blood-donation-awareness",
+  "version": "1.0.0",
+  "description": "Blood Donation Awareness & Public Health Hub",
+  "scripts": {
+    "start": "npx -y serve . -l 8080",
+    "dev": "npx -y serve . -l 8080"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
