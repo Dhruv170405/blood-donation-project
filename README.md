@@ -89,9 +89,6 @@ blood-donation-awareness/
 │   └── images/
 │       ├── hero.jpg            # Clinic donation photo
 │       └── impact.jpg          # Educational community graphic
-├── docs/
-│   ├── project-report.md       # Comprehensive academic project report
-│   └── viva-questions.md       # 25+ technical & conceptual Q&A for exams/interviews
 └── README.md                   # Project documentation & setup guide
 ```
 
